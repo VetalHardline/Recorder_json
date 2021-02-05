@@ -30,6 +30,7 @@ public:
     QPushButton *addJson_Key;
     QPushButton *clearJson_File;
     QPushButton *SaveJson_File;
+    QPushButton *LoadJson_File;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -58,6 +59,9 @@ public:
         SaveJson_File = new QPushButton(centralwidget);
         SaveJson_File->setObjectName(QString::fromUtf8("SaveJson_File"));
         SaveJson_File->setGeometry(QRect(500, 460, 111, 71));
+        LoadJson_File = new QPushButton(centralwidget);
+        LoadJson_File->setObjectName(QString::fromUtf8("LoadJson_File"));
+        LoadJson_File->setGeometry(QRect(630, 460, 131, 71));
         Recorder_json->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Recorder_json);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -79,6 +83,7 @@ public:
         addJson_Key->setText(QCoreApplication::translate("Recorder_json", "addKey", nullptr));
         clearJson_File->setText(QCoreApplication::translate("Recorder_json", "clear", nullptr));
         SaveJson_File->setText(QCoreApplication::translate("Recorder_json", "SaveJson_File", nullptr));
+        LoadJson_File->setText(QCoreApplication::translate("Recorder_json", "LoadJson_File", nullptr));
     } // retranslateUi
 
 };

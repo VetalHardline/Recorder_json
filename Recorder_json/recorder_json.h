@@ -20,6 +20,8 @@ public:
     void addJson_Key();
     void clearJson_File();
     void SaveJson_File();
+    void LoadJson_File();
+
 private:
     Ui::Recorder_json *ui;
 

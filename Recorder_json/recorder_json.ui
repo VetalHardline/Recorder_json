@@ -86,6 +86,19 @@
      <string>SaveJson_File</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="LoadJson_File">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>460</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>LoadJson_File</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

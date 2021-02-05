@@ -17,6 +17,7 @@ Recorder_json::Recorder_json(QWidget *parent)
     connect(ui->addJson_Key, &QPushButton::clicked, this, &Recorder_json::addJson_Key);
     connect(ui->clearJson_File, &QPushButton::clicked, this, &Recorder_json::clearJson_File);
     connect(ui->SaveJson_File, &QPushButton::clicked, this, &Recorder_json::SaveJson_File);
+    connect(ui->LoadJson_File, &QPushButton::clicked, this, &Recorder_json::LoadJson_File);
 }
 
 Recorder_json::~Recorder_json()
@@ -58,6 +59,24 @@ void Recorder_json::SaveJson_File()
 
     jsonFile.write(QJsonDocument(mainJson_Object).toJson(QJsonDocument::Indented));
     jsonFile.close();
+}
+
+void Recorder_json::LoadJson_File()
+{
+    QString openFileName = QFileDialog::getOpenFileName(this, tr("Open Json File"), QString(), tr("JSON (*.json)"));
+    QFileInfo fileInfo(openFileName);
+    QDir::setCurrent(fileInfo.path());
+    QFile jsonFile(openFileName);
+    if (!jsonFile.open(QIODevice::ReadOnly))
+    {
+        return;
+    }
+
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument jsonDocument(QJsonDocument::fromJson(data));
+    mainJson_Object = jsonDocument.object();
+    ui->jsonText->clear();
+    ui->jsonText->setText(QJsonDocument(mainJson_Object).toJson(QJsonDocument::Indented));
 }
 
 void Recorder_json::clearJson_File()
