@@ -27,6 +27,9 @@ public:
     QTextEdit *userText;
     QTextEdit *jsonText;
     QPushButton *addJson_File;
+    QPushButton *addJson_Key;
+    QPushButton *clearJson_File;
+    QPushButton *SaveJson_File;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,6 +49,15 @@ public:
         addJson_File = new QPushButton(centralwidget);
         addJson_File->setObjectName(QString::fromUtf8("addJson_File"));
         addJson_File->setGeometry(QRect(20, 460, 151, 71));
+        addJson_Key = new QPushButton(centralwidget);
+        addJson_Key->setObjectName(QString::fromUtf8("addJson_Key"));
+        addJson_Key->setGeometry(QRect(200, 460, 131, 71));
+        clearJson_File = new QPushButton(centralwidget);
+        clearJson_File->setObjectName(QString::fromUtf8("clearJson_File"));
+        clearJson_File->setGeometry(QRect(360, 460, 111, 71));
+        SaveJson_File = new QPushButton(centralwidget);
+        SaveJson_File->setObjectName(QString::fromUtf8("SaveJson_File"));
+        SaveJson_File->setGeometry(QRect(500, 460, 111, 71));
         Recorder_json->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Recorder_json);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -63,7 +75,10 @@ public:
     void retranslateUi(QMainWindow *Recorder_json)
     {
         Recorder_json->setWindowTitle(QCoreApplication::translate("Recorder_json", "Recorder_json", nullptr));
-        addJson_File->setText(QCoreApplication::translate("Recorder_json", "add", nullptr));
+        addJson_File->setText(QCoreApplication::translate("Recorder_json", "addJson_File", nullptr));
+        addJson_Key->setText(QCoreApplication::translate("Recorder_json", "addKey", nullptr));
+        clearJson_File->setText(QCoreApplication::translate("Recorder_json", "clear", nullptr));
+        SaveJson_File->setText(QCoreApplication::translate("Recorder_json", "SaveJson_File", nullptr));
     } // retranslateUi
 
 };

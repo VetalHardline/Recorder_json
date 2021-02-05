@@ -17,14 +17,14 @@ public:
     ~Recorder_json();
 
     void addJson_File();
-
     void addJson_Key();
-
+    void clearJson_File();
+    void SaveJson_File();
 private:
     Ui::Recorder_json *ui;
 
     QJsonObject mainJson_Object;
 
-    QString _key="NONAME";
+    QString _key = "NONAME";
 };
 #endif // RECORDER_JSON_H

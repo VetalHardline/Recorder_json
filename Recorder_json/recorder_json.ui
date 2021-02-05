@@ -60,6 +60,32 @@
      <string>addKey</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="clearJson_File">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>460</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>clear</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveJson_File">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>460</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SaveJson_File</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
