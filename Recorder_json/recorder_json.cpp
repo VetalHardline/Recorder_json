@@ -14,6 +14,7 @@ Recorder_json::Recorder_json(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->addJson_File, &QPushButton::clicked, this, &Recorder_json::addJson_File);
+    connect(ui->addJson_Key, &QPushButton::clicked, this, &Recorder_json::addJson_Key);
 }
 
 Recorder_json::~Recorder_json()
@@ -24,14 +25,19 @@ Recorder_json::~Recorder_json()
 void Recorder_json::addJson_File()
 {
     QJsonObject UsertextObject;
-    UsertextObject["key"] = ui->userText->toPlainText();
+    UsertextObject[_key] = ui->userText->toPlainText();
+    _key ="NONAME";
     QJsonArray UsertextArray;
     UsertextArray = mainJson_Object["array"].toArray();
     UsertextArray.append(UsertextObject);
     mainJson_Object["array"] = UsertextArray;
 
     ui->jsonText->setText(QJsonDocument(mainJson_Object).toJson(QJsonDocument::Indented));
-
     ui->userText->clear();
 }
 
+void Recorder_json::addJson_Key()
+{
+    _key = ui->userText->toPlainText();
+    ui->userText->clear();
+}

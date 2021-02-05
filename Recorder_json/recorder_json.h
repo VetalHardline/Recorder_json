@@ -16,11 +16,15 @@ public:
     Recorder_json(QWidget *parent = nullptr);
     ~Recorder_json();
 
-     void addJson_File();
+    void addJson_File();
+
+    void addJson_Key();
 
 private:
     Ui::Recorder_json *ui;
 
     QJsonObject mainJson_Object;
+
+    QString _key="NONAME";
 };
 #endif // RECORDER_JSON_H

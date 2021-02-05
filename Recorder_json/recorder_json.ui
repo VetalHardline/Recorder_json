@@ -44,7 +44,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>add</string>
+     <string>addJson_File</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addJson_Key">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>460</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>addKey</string>
     </property>
    </widget>
   </widget>
